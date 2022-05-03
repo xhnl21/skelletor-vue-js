@@ -1,4 +1,4 @@
-// legenda //
+// leyenda //
 // type = "get", "post", "delete", "put" ===>>> obligatorio
 // token = si es una ruta protegida por session "true o false"
 // upload = indica si se va a subir un documento "true o false"

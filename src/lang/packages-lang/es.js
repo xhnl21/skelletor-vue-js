@@ -19,7 +19,7 @@ export default {
     "s" : "vue-devtools",
     "t" : "vue-loader",
     "w" : "awesome-vue",
-    "welcome" : "Bienvenido a su aplicación Vue.js XAVIER",
+    "welcome" : "Bienvenido a su aplicación Vue.js",
     "pg_demo" : "Esta es una página acerca de",
     "languageEn" : "Ingles",
     "languageSp" : "Español",

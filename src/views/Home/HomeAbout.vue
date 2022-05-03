@@ -43,10 +43,7 @@ export default {
             this.resques(type, false, false, false, url, [], method);
         },
         initB () {
-            const url = this.apis.getS(3);
-            const type = "get";
-            const method = "initB";
-            this.resquesA(type, false, false, false, url, [], method);
+            this.resquesA("get", false, false, false, this.apis.getS(3), [], "initB");
         }
     },
     computed: {

@@ -19,7 +19,7 @@ export default {
     "s" : "vue-devtools",
     "t" : "vue-loader",
     "w" : "awesome-vue",
-    "welcome" : "Welcome to Your Vue.js App ANDERSON",
+    "welcome" : "Welcome to Your Vue.js App",
     "pg_demo" : "This is an about page",
     "languageEn" : "English",
     "languageSp" : "Spanish",
