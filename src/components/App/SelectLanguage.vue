@@ -27,9 +27,7 @@ export default {
         },
         selectedLanguage () {
             localStorage.setItem("langLocal", this.language);
-            const name = "refreshApp";
-            const data = true;
-            this.array (name, data);
+            this.array ("refreshApp", true);
         },
         array (name, data) {
             const k = [];

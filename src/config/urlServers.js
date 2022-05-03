@@ -5,8 +5,8 @@ const urlServers = {
         dev: "http://127.0.0.1:8000/"
     },
     urldashboard: {
-        produccion: "https://api.coindesk.com/v1",
-        test: "https://api.coindesk.com/v1",
+        produccion: "https://reqres.in/api",
+        test: "https://reqres.in/api",
         dev: "http://127.0.0.1:8000/"
     },
     urlbaselogin: {

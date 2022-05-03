@@ -3,13 +3,13 @@ export default {
     language (state) {
         return state.language[window.langLocal];
     },
-    menutab (state) {
-        return state.menutab;
-    },
     apis (state) {
         return state.apis;
     },
     GetRefreshLaguage (state) {
         return state.refreshLaguage;
+    },
+    GethttpResques (state) {
+        return state.httpResques;
     }
 };

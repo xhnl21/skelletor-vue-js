@@ -6,9 +6,9 @@
 // url = es la ruta donde se hace peticiones ===>>> obligatorio
 // data = normalmente se usa cuando se aplica "post" y "put"
 // method = indica el nombre del metodo quien invoka la funtion de peticiones ===>>> obligatorio
-const resquesMixin = {
+const resquesAMixin = {
     methods: {
-        resques (type, token, upload, event, url, data, method) {
+        resquesA (type, token, upload, event, url, data, method) {
             if (type !== "") {
                 type = type.toLowerCase();
             }
@@ -60,7 +60,7 @@ const resquesMixin = {
                         for (const [key, value] of Object.entries(data)) {
                             formData.append(key, value);
                         }
-                        window.master
+                        window.mastera
                             .post(url, formData, fileSendHeader)
                             .then((response) => {
                                 this.array ("ReturnHttp", method, response);
@@ -69,7 +69,7 @@ const resquesMixin = {
                                 this.array ("ReturnHttp", method, error);
                             });
                     } else {
-                        window.master
+                        window.mastera
                             .post(url, data)
                             .then((response) => {
                                 this.array ("ReturnHttp", method, response);
@@ -91,7 +91,7 @@ const resquesMixin = {
                             this.array ("ReturnHttp", method, error);
                         });
                 } else {
-                    window.master
+                    window.mastera
                         .get(url)
                         .then((response) => {
                             this.array ("ReturnHttp", method, response);
@@ -148,7 +148,7 @@ const resquesMixin = {
                         for (const [key, value] of Object.entries(data)) {
                             formData.append(key, value);
                         }
-                        window.master
+                        window.mastera
                             .put(url, formData, fileSendHeader)
                             .then((response) => {
                                 this.array ("ReturnHttp", method, response);
@@ -157,7 +157,7 @@ const resquesMixin = {
                                 this.array ("ReturnHttp", method, error);
                             });
                     } else {
-                        window.master
+                        window.mastera
                             .put(url, data)
                             .then((response) => {
                                 this.array ("ReturnHttp", method, response);
@@ -179,7 +179,7 @@ const resquesMixin = {
                             this.array ("ReturnHttp", method, error);
                         });
                 } else {
-                    window.master
+                    window.mastera
                         .delete(url, data)
                         .then((response) => {
                             this.array ("ReturnHttp", method, response);
@@ -196,9 +196,8 @@ const resquesMixin = {
         array (name, method, data ) {
             const k = [];
             k.push({ function:name, method:method, data:data });
-            console.log(k);
             this.$store.commit("SethttpResques", k);
         }
     }
 };
-export default resquesMixin;
+export default resquesAMixin;

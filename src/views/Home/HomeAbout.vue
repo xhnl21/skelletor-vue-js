@@ -14,8 +14,7 @@
 </template>
 
 <script>
-// @ is an alias to /src
-// import axios from "axios";
+import { mapGetters } from "vuex";
 export default {
     name: "HomeAbout",
     components: {},
@@ -37,38 +36,38 @@ export default {
             this.initA ();
             this.initB ();
         },
-        http () {
-            const url = this.apis.get();
-            const type = "get";
-            const data = [];
-            const upload = false;
-            const token = false;
-            const promise = false;
-            this.resques (url, type, data, upload, token, promise);
-        },
         initA () {
             const url = this.apis.get();
-            window.master
-                .get(url)
-                .then((response) => {
-                    this.info = response.data.bpi;
-                    // console.log(this.info);
-                })
-                .catch((error) => {
-                    console.log(error);
-                });
+            const type = "get";
+            const method = "initA";
+            this.resques(type, false, false, false, url, [], method);
         },
         initB () {
             const url = this.apis.getS(3);
-            window.mastera
-                .get(url)
-                .then((response) => {
-                    this.infoA = response.data.data;
-                    // console.log(this.infoA);
-                })
-                .catch((error) => {
-                    console.log(error);
-                });
+            const type = "get";
+            const method = "initB";
+            this.resquesA(type, false, false, false, url, [], method);
+        }
+    },
+    computed: {
+        ...mapGetters(["GethttpResques"])
+    },
+    watch: {
+        GethttpResques: function () {
+            if (this.GethttpResques) {
+                const g = this.$store.getters["GethttpResques"];
+                const fun = g[0].function;
+                const method = g[0].method;
+                const data = g[0].data;
+                if (fun === "ReturnHttp") {
+                    if (method === "initA") {
+                        this.info = data.data.bpi;
+                    }
+                    if (method === "initB") {
+                        this.infoA = data.data.data;
+                    }
+                }
+            }
         }
     }
 };
